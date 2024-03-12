@@ -1,0 +1,135 @@
+::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--şeffaf);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--temarenk);
+}
+
+:root {
+    --temarenk: #000000;
+    --temayarısaydam: #0000007c;
+    --şeffaf: #ffffff00;
+    --siyah: #000;
+    --texthover: #555;
+    --textyarısaydam: #55555540;
+    --font: 'Poppins';
+    --beyaz: #fff;
+    --yarısaydam: #ffffff8f;
+}
+.nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--temarenk);
+    height: 60px;
+    z-index: 99999;
+    width: 100%;
+}
+
+.nav .siteBaslik {
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: 3rem;
+    color: var(--beyaz);
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.nav-links {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    transition: 1s ease;
+}
+
+.nav-links .navLinks {
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+.nav-links .navLinks:hover {
+    text-decoration: none;
+    color: var(--texthover);
+}
+
+
+.burger {
+    display: none;
+    cursor: pointer;
+
+}
+
+.burger .bar1,
+.burger .bar2,
+.burger .bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: .1s;
+}
+
+.burger .bar2 {
+    margin: 3px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .body {
+        overflow-x: hidden;
+    }
+
+    .nav .siteBaslik {    
+        width: auto;    
+        display: block;
+    }
+
+    .burger {
+        display: block;
+
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 6vh;
+        right: 0;
+        width: 60%;
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+        background: var(--temarenk);
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+    }
+
+}
+
+.nav-active {
+    transform: translateX(0);
+    box-shadow: -250px 0 50px var(--temayarısaydam),
+        -2px 2px 3px var(--siyah);
+}
+
+.close .bar1 {
+    transform: rotate(45deg) translate(5px, 3px);
+    transition: .1s;
+}
+
+.close .bar2 {
+    opacity: 0;
+}
+
+.close .bar3 {
+    transform: rotate(-45deg) translate(5px, -3px);
+    transition: .1s;
+}

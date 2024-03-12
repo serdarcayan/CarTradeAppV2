@@ -1,0 +1,55 @@
+{% load static %}
+
+{% extends 'homebase.html' %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+{% block content %}
+  <div class="container mt-3">
+    <div class="row mt-3">
+      <div class="col-3">
+        <ul class="list-group">
+          <li class="list-group-item" style="max-height: 40px;">Markalar</li>
+          {% for brand in brands %}
+            <li class="list-group-item" style="max-height: 65px;">
+              <a href="#{{ brand.slug }}" class="h6">
+                <img src="{{ brand.image.url }}" alt="" class="img-thumbnail circle" style="max-width: 45px; max-height: 45px;" />
+                {{ brand.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-9">
+        {% block searchbox %}
+
+        {% endblock %}
+        <div class="card-deck d-flex">
+          {% for deal in deals %}
+            <div class="col-lg-4 col-md-5 col-sm-7">
+                <div class="single-featured-cars">
+                  <div class="featured-img-box">
+                    <div class="featured-cars-img">
+                      <img src="{{ deal.banner.url }}" alt="cars" />
+                    </div>
+                    <div class="featured-model-info">
+                      <p>
+                        model: {{deal.model}}
+                        <span class="featured-mi-span">{{deal.km}} KM</span>
+                        <span class="featured-hp-span">{{deal.price}}TL</span>
+                        {{deal.gearbox}}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="featured-cars-txt">
+                    <h2 class="d-flex align-center justify-content-center"><a href="#">{{ deal.title|truncatechars:25 }}</h2>
+                  </div>
+                </div>
+              </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
