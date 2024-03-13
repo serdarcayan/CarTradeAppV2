@@ -1,5 +1,7 @@
 from django.db import models
 
+import uuid
+
 # Create your models here.
 
 
@@ -13,6 +15,8 @@ class Brands(models.Model):
 
 
 class Ilanlar(models.Model):
+    def generate_slug():
+        return str(uuid.uuid4()).replace("-", "")
     STATUS = (("True", "Aktif"), ("False", "Deaktif"))
     GEARBOX_TYPE = (
         ("manual", "Manual"),
@@ -29,7 +33,7 @@ class Ilanlar(models.Model):
     description = models.TextField(blank=False)
     price = models.IntegerField(default=0, blank=False)
     create_time = models.DateTimeField(auto_now_add=True,editable=False)
-    slug = models.SlugField(null=False, unique=True, blank=False)
+    slug = models.SlugField(null=False, unique=True, default=generate_slug, blank=False)
     status = models.CharField(max_length=10, choices=STATUS, default="True", blank=False)
     goruntulenme_sayisi = models.IntegerField(default=0,editable=False)
 

@@ -1,0 +1,59 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %}
+    {{ title }}
+{% endblock  %}
+
+{% block content %}
+  <section class="container mt-3">
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-hover" style="margin-left:auto; margin-right:auto;">
+          <thead class="thead-dark">
+              <tr>
+                  <th colspan="2" scope="col" style="text-align: center;">İlan Detayları</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="text-align: start;">İlan numanrası :</td>
+                  <td style="text-align: end;">{{ deal.slug }}</td>
+              </tr>
+              <tr>
+                  <td style="text-align: start;">Marka :</td>
+                  <td style="text-align: end;">{{ deal.brand }}</td>  
+              </tr>
+              <tr>
+                  <td style="text-align: start;">Yıl :</td>
+                  <td style="text-align: end;">{{ deal.model }}</td>
+              </tr>
+              <tr>
+                  <td style="text-align: start;">Yıl :</td>
+                  <td style="text-align: end;">{{ deal.model }}</td>
+              </tr>
+              <tr>
+                  <td style="text-align: start;">Kilometre :</td>
+                  <td style="text-align: end;">{{ deal.km }}</td>
+              </tr>
+              <tr>
+                  <td style="text-align: start;">Güç :</td>
+                  <td style="text-align: end;">{{ deal.horsepower }}</td>
+              </tr>
+              <tr>
+                  <td style="text-align: start;">Yıl :</td>
+                  <td style="text-align: end;">{{ deal.model }}</td>
+              </tr>
+              <tr>
+                  <td style="text-align: start;">Vites Türü :</td>
+                  <td style="text-align: end;">{{ deal.Gearbox }}</td>
+              </tr>
+              <tr>
+                  <td style="text-align: start;">İlan Tarihi :</td>
+                  <td style="text-align: end;">{{ deal.create_time }}</td>
+              </tr>   
+          </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+{% endblock %}

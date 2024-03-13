@@ -1,13 +1,36 @@
-{% load static %}
-
 {% extends 'homebase.html' %}
+{% load static %}
 
 {% block title %}
   {{ title }}
 {% endblock %}
 {% block content %}
+  {% include 'search.html' %}
+
   <div class="container mt-3">
-    <div class="row mt-3">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-2">
+            <form action="" method="get">
+              <select name="" id="" class="form-control p-0">
+                <option selected>Filtrele</option>
+                <option value="1">Artan fiyat</option>
+                <option value="1">Azalan fiyat</option>
+                <option value="1">eklnme zamanı(önce eski)</option>
+                <option value="1">eklnme zamanı(önce yen)</option>
+              </select>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-3">
+    <div class="row">
       <div class="col-3">
         <ul class="list-group">
           <li class="list-group-item" style="max-height: 40px;">Markalar</li>
@@ -22,31 +45,28 @@
         </ul>
       </div>
       <div class="col-9">
-        {% block searchbox %}
-
-        {% endblock %}
         <div class="card-deck d-flex">
           {% for deal in deals %}
-            <div class="col-lg-4 col-md-5 col-sm-7">
-                <div class="single-featured-cars">
-                  <div class="featured-img-box">
-                    <div class="featured-cars-img">
-                      <img src="{{ deal.banner.url }}" alt="cars" />
-                    </div>
-                    <div class="featured-model-info">
-                      <p>
-                        model: {{deal.model}}
-                        <span class="featured-mi-span">{{deal.km}} KM</span>
-                        <span class="featured-hp-span">{{deal.price}}TL</span>
-                        {{deal.gearbox}}
-                      </p>
-                    </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="single-featured-cars">
+                <div class="featured-img-box">
+                  <div class="featured-cars-img">
+                    <a href="{% url 'ilandetayı' deal.slug %}"><img src="{{ deal.banner.url }}" alt="cars" /></a>
                   </div>
-                  <div class="featured-cars-txt">
-                    <h2 class="d-flex align-center justify-content-center"><a href="#">{{ deal.title|truncatechars:25 }}</h2>
+                  <div class="featured-model-info">
+                    <p>
+                      model: {{ deal.model }}
+                      <span class="featured-mi-span">{{ deal.km }} KM</span>
+                      <span class="featured-hp-span">{{ deal.price }} TL</span>
+                      {{ deal.Gearbox }}
+                    </p>
                   </div>
                 </div>
+                <div class="featured-cars-txt">
+                  <h2 class="d-flex align-center justify-content-center"><a href="{% url 'ilandetayı' deal.slug %}">{{ deal.title|truncatechars:25 }}</a></h2>
+                </div>
               </div>
+            </div>
           {% endfor %}
         </div>
       </div>
