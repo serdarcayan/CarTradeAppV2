@@ -1,8 +1,8 @@
 {% extends 'homebase.html' %}
 {% load static %}
 {% block title %}
-    {{ title }}
-{% endblock  %}
+  {{ title }}
+{% endblock %}
 
 {% block content %}
   <section class="container mt-3">
@@ -10,49 +10,45 @@
       <div class="col-12">
         <table class="table table-hover" style="margin-left:auto; margin-right:auto;">
           <thead class="thead-dark">
-              <tr>
-                  <th colspan="2" scope="col" style="text-align: center;">İlan Detayları</th>
-              </tr>
+            <tr>
+              <th colspan="2" scope="col" style="text-align: center;">İlan Detayları</th>
+            </tr>
           </thead>
           <tbody>
-              <tr>
-                  <td style="text-align: start;">İlan numanrası :</td>
-                  <td style="text-align: end;">{{ deal.slug }}</td>
-              </tr>
-              <tr>
-                  <td style="text-align: start;">Marka :</td>
-                  <td style="text-align: end;">{{ deal.brand }}</td>  
-              </tr>
-              <tr>
-                  <td style="text-align: start;">Yıl :</td>
-                  <td style="text-align: end;">{{ deal.model }}</td>
-              </tr>
-              <tr>
-                  <td style="text-align: start;">Yıl :</td>
-                  <td style="text-align: end;">{{ deal.model }}</td>
-              </tr>
-              <tr>
-                  <td style="text-align: start;">Kilometre :</td>
-                  <td style="text-align: end;">{{ deal.km }}</td>
-              </tr>
-              <tr>
-                  <td style="text-align: start;">Güç :</td>
-                  <td style="text-align: end;">{{ deal.horsepower }}</td>
-              </tr>
-              <tr>
-                  <td style="text-align: start;">Yıl :</td>
-                  <td style="text-align: end;">{{ deal.model }}</td>
-              </tr>
-              <tr>
-                  <td style="text-align: start;">Vites Türü :</td>
-                  <td style="text-align: end;">{{ deal.Gearbox }}</td>
-              </tr>
-              <tr>
-                  <td style="text-align: start;">İlan Tarihi :</td>
-                  <td style="text-align: end;">{{ deal.create_time }}</td>
-              </tr>   
+            <tr>
+              <td style="text-align: start;">Adres :</td>
+              <td style="text-align: end;">{{ sett.adress }}</td>
+            </tr>
+            <tr>
+              <td style="text-align: start;">Tel :</td>
+              <td style="text-align: end;">{{ sett.phone }}</td>
+            </tr>
+            <tr>
+              <td style="text-align: start;">Mail :</td>
+              <td style="text-align: end;">{{ sett.email }}</td>
+            </tr>
           </tbody>
-      </table>
+        </table>
+      </div>
+    </div>
+    <div class="row  d-flex justify-content-center align-items-center">
+      <div class="col-1">
+        <a href="#" class="d-flex justify-content-center align-items-center" style="width: 100%;height: 40px; background: #037bfc; color: #fff; font-size: 1.5rem;"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      </div>
+      <div class="col-1">
+        <a href="" class="d-flex justify-content-center align-items-center" style="width: 100%;height: 40px; background: #d6249f; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); color: #fff; font-size: 1.5rem;"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+
+      </div>
+      <div class="col-1">
+        <a href="#" class="d-flex justify-content-center align-items-center" style="width: 100%;height: 40px; background: #037bfc; color: #fff; font-size: 1.5rem;"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      </div>
+      <div class="col-1">
+        <a href="#" class="d-flex justify-content-center align-items-center" style="width: 100%;height: 40px; background: #037bfc; color: #fff; font-size: 1.5rem;"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col d-flex justify-content-center align-items-center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100032.80889471693!2d26.99731674971475!3d38.41778070389088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd862a762cacd%3A0x628cbba1a59ce8fe!2zxLB6bWly!5e0!3m2!1str!2str!4v1710353629440!5m2!1str!2str" width="500" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
