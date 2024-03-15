@@ -11,12 +11,23 @@
               <div class="col">
                 <input type="text" class="form-control" placeholder=""/>
               </div>
-              {% comment %} <select class="col-2 custom-select mr-sm-2 pl-2">
-                <option value="1">KM'ye göre</option>
+              <select class="col-2 custom-select mr-sm-2 pl-2">
+                <option value="0" selected>markaya göre</option>
+                {% for brand in brands %}
+                <option value="{{ forloop.counter }}">{{ brand.title }}</option>
+                {% endfor %}
+              </select> 
+              <select class="col-2 custom-select mr-sm-2 pl-2">
+                <option value="0" selected>Güç'e göre</option>
+                <option value="1"><640</option>
+                <option value="2">>640</option>
+              </select> 
+              <select class="col-2 custom-select mr-sm-2 pl-2">
+                <option value="1" selected>KM'ye göre</option>
                 <option value="1">0 km</option>
                 <option value="2"><180.000</option>
                 <option value="3">>180.000</option>
-              </select> {% endcomment %}
+              </select> 
               <div class="col-1">
                 <input type="submit" class="form-control btn-outline-danger" placeholder="" value="Ara" />
               </div>

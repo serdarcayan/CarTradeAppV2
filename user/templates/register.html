@@ -1,0 +1,87 @@
+{% extends 'homebase.html' %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block content %}
+  <section class="container mt-5 mb-5">
+    <div class="row border bg-white rounded p-4 shadow-lg">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <h2 class="h4 text-center p-3">Aracını {{ sett.title }} İle Kolayca Sat!</h2>
+
+            <div class="single-service-item">
+              <div class="single-service-icon">
+                <i class="flaticon-car"></i>
+              </div>
+              <p>
+                Hızlı ve güvenilir bir şekilde aracını satmak için sende <span class="text-danger">500.000+</span> kullanıcının arasına katıl!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            {% if error %}
+              <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <form method="post">
+          <div class="row">
+            <div class="col">
+              <h2 class="h4 text-center">Kayıt ol</h2>
+            </div>
+          </div>
+          {% csrf_token %}
+          <div class="row">
+            <div class="col form-group">
+              <label for="username" class="text-dark">Kullanıcı Adı :</label>
+              <input type="text" class="form-control" name="username" value="{{username}}"/>
+            </div>
+          </div>    
+          <div class="row">
+            <div class="col form-group">
+              <label for="username" class="text-dark">E-mail :</label>
+              <input type="email" class="form-control" name="email" value="{{email}}"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col form-group">
+              <label for="username" class="text-dark">Şifre :</label>
+              <input type="password" class="form-control" name="password" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col form-group">
+              <label for="username" class="text-dark">Şifre tekrar :</label>
+              <input type="password" class="form-control" name="passwordagain" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col form-group d-flex justify-content-between align-items-center pl-5">
+              <input type="checkbox" class="form-check-input" name="sozlesmeonay" />
+              <label for="username" class="text-center" style="font-size: .8rem;"><a href="sozlesmeonay" class="text-danger" style="font-size: .8rem;">Kullnıcı sözleşmesini</a> okudum onaylıyorum.</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col"></div>
+            <div class="col-4 form-group d-flex justify-content-between align-items-center">
+              <input type="submit" class="form-control btn btn-outline-primary" name="submit" value="Kayıt Ol" />
+            </div>
+            <div class="col"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}

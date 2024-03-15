@@ -46,6 +46,7 @@
     width: 75%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 60%;
     transition: 1s ease;
 }
@@ -56,6 +57,9 @@
     text-decoration: none;
     font-family: 'Poppins';
     font-weight: 600;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .nav-links .navLinks:hover {
@@ -105,6 +109,7 @@
         width: 60%;
         height: calc(100vh - 60px);
         display: flex;
+        flex-direction: column-reverse;
         flex-direction: column;
         background: var(--temarenk);
         align-items: center;

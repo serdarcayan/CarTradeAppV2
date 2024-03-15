@@ -17,10 +17,11 @@
             <form action="" method="get">
               <select name="" id="" class="form-control p-0">
                 <option selected>Filtrele</option>
+                <option value="0">popülerlik</option>
                 <option value="1">Artan fiyat</option>
-                <option value="1">Azalan fiyat</option>
-                <option value="1">eklnme zamanı(önce eski)</option>
-                <option value="1">eklnme zamanı(önce yen)</option>
+                <option value="2">Azalan fiyat</option>
+                <option value="3">eklnme zamanı(önce eski)</option>
+                <option value="4">eklnme zamanı(önce yen)</option>
               </select>
             </form>
           </div>
@@ -36,7 +37,7 @@
           <li class="list-group-item" style="max-height: 40px;">Markalar</li>
           {% for brand in brands %}
             <li class="list-group-item" style="max-height: 65px;">
-              <a href="#{{ brand.slug }}" class="h6">
+              <a href="{{ brand.slug }}" class="h6">
                 <img src="{{ brand.image.url }}" alt="" class="img-thumbnail circle" style="max-width: 45px; max-height: 45px;" />
                 {{ brand.title }}
               </a>

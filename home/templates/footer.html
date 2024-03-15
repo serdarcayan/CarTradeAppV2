@@ -9,39 +9,39 @@
         <div class="col-md-3 col-sm-6">
           <div class="single-footer-widget">
             <div class="footer-logo">
-              <a href="index.html">carvilla</a>
+              <a href="index.html">{{sett.title}}</a>
             </div>
-            <p>Ased do eiusm tempor incidi ut labore et dolore magnaian aliqua. Ut enim ad minim veniam.</p>
+            <p>{{sett.description}}</p>
             <div class="footer-contact">
-              <p>info@themesine.com</p>
-              <p>+1 (885) 2563154554</p>
+              <p>{{sett.email}}</p>
+              <p>{{sett.number}}</p>
             </div>
           </div>
         </div>
-        <div class="col-md-2 col-sm-6">
+        <div class="col">
           <div class="single-footer-widget">
-            <h2>about devloon</h2>
+            <h2>Navigations</h2>
             <ul>
               <li>
-                <a href="#">about us</a>
+                <a href="/">Ana Sayfa</a>
               </li>
               <li>
-                <a href="#">career</a>
+                <a href="{% url "ilanlar" %}">İlanlar</a>
               </li>
               <li>
-                <a href="#">terms <span>of service</span></a>
+                <a href="{% url "hakkimizda" %}">Hakkımızda</a>
               </li>
               <li>
-                <a href="#">privacy policy</a>
+                <a href="{% url "iletişim" %}">İletişim</a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="col-md-3 col-xs-12">
+        <div class="col">
           <div class="single-footer-widget">
-            <h2>top brands</h2>
+            <h2 class="text-center">top brands</h2>
             <div class="row">
-              <div class="col-md-7 col-xs-6">
+              <div class="col">
                 <ul>
                   <li>
                     <a href="#">BMW</a>
@@ -88,27 +88,9 @@
             </div>
           </div>
         </div>
-        <div class="col-md-offset-1 col-md-3 col-sm-6">
-          <div class="single-footer-widget">
-            <h2>news letter</h2>
-            <div class="footer-newsletter">
-              <p>Subscribe to get latest news update and informations</p>
-            </div>
-            <div class="hm-foot-email">
-              <div class="foot-email-box">
-                <input type="text" class="form-control" placeholder="Add Email" />
-              </div>
-              <!-- /.foot-email-box -->
-              <div class="foot-email-subscribe">
-                <span><i class="fa fa-arrow-right"></i></span>
-              </div>
-              <!-- /.foot-email-icon -->
-            </div>
-            <!-- /.hm-foot-email -->
-          </div>
-        </div>
       </div>
     </div>
+
     <div class="footer-copyright">
       <div class="row">
         <div class="col-sm-6">
@@ -132,10 +114,4 @@
   </div>
   <!-- /.container -->
 
-  <div id="scroll-Top">
-    <div class="return-to-top">
-      <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
-    </div>
-  </div>
-  <!-- /.scroll-Top -->
 </footer>

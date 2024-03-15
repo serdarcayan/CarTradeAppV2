@@ -25,7 +25,7 @@ class Ilanlar(models.Model):
     title = models.CharField(max_length=255, blank=False)
     brand = models.ForeignKey(Brands, on_delete=models.CASCADE, blank=False)
     banner = models.ImageField(upload_to="images/", blank=False)
-    images = models.ImageField(upload_to="images/", blank=False)
+    images = models.ImageField(upload_to="images/", blank=False, default=None)
     model = models.PositiveSmallIntegerField(default=1900, blank=False)
     km = models.IntegerField(default=0, blank=False)
     horsepower = models.IntegerField(default=10, blank=False)

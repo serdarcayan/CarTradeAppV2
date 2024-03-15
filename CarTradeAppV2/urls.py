@@ -17,13 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls.static import static
-
+from home import views
 from CarTradeAppV2 import settings
 
 urlpatterns = [
     path('', include('home.urls')),
     path('home/', include('home.urls')),
     path('ilanlar/', include('ilanlar.urls')),
-    #path('user/', include('ilanlar.urls')),
+    path('hakkimizda/', views.hakkimizda, name='hakkimizda'),
+    path('iletişim/', views.iletişim, name='iletişim'),
+    path('user/', include('user.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

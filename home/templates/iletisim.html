@@ -11,7 +11,7 @@
         <table class="table table-hover" style="margin-left:auto; margin-right:auto;">
           <thead class="thead-dark">
             <tr>
-              <th colspan="2" scope="col" style="text-align: center;">İlan Detayları</th>
+              <th colspan="2" scope="col" style="text-align: center;">İletişim</th>
             </tr>
           </thead>
           <tbody>
@@ -21,7 +21,7 @@
             </tr>
             <tr>
               <td style="text-align: start;">Tel :</td>
-              <td style="text-align: end;">{{ sett.phone }}</td>
+              <td style="text-align: end;">{{ sett_phone }}</td>
             </tr>
             <tr>
               <td style="text-align: start;">Mail :</td>
@@ -31,19 +31,34 @@
         </table>
       </div>
     </div>
-    <div class="row  d-flex justify-content-center align-items-center">
-      <div class="col-1">
-        <a href="#" class="d-flex justify-content-center align-items-center" style="width: 100%;height: 40px; background: #037bfc; color: #fff; font-size: 1.5rem;"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col">
+        {% if sett.facebook %}
+            <a target="_blank" href="{{ sett.facebook }}" class="d-flex justify-content-center align-items-center" 
+            style="width: 100%;height: 40px; background: #037bfc; color: #fff; font-size: 1.5rem;">
+            <i class="fa fa-facebook" aria-hidden="true"></i></a>
+        {% endif %}
       </div>
-      <div class="col-1">
-        <a href="" class="d-flex justify-content-center align-items-center" style="width: 100%;height: 40px; background: #d6249f; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); color: #fff; font-size: 1.5rem;"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-
+      <div class="col">
+        {% if sett.instagram %}
+          <a target="_blank" href="{{ sett.instagram }}" class="d-flex justify-content-center align-items-center" 
+          style="width: 100%;height: 40px; background: #d6249f; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); color: #fff; font-size: 1.5rem;">
+          <i class="fa fa-instagram" aria-hidden="true"></i></a>
+        {% endif %}
       </div>
-      <div class="col-1">
-        <a href="#" class="d-flex justify-content-center align-items-center" style="width: 100%;height: 40px; background: #037bfc; color: #fff; font-size: 1.5rem;"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <div class="col">
+        {% if sett.twitter %}
+            <a target="_blank" href="{{ sett.twitter }}" class="d-flex justify-content-center align-items-center" 
+            style="width: 100%;height: 40px; background: #037bfc; color: #fff; font-size: 1.5rem;">
+            <i class="fa fa-twitter" aria-hidden="true"></i></a>
+        {% endif %}
       </div>
-      <div class="col-1">
-        <a href="#" class="d-flex justify-content-center align-items-center" style="width: 100%;height: 40px; background: #037bfc; color: #fff; font-size: 1.5rem;"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <div class="col">
+        {% if sett.linkedin %}
+            <a target="_blank" href="{{ sett.linkedin }}" class="d-flex justify-content-center align-items-center" 
+            style="width: 100%;height: 40px; background: #037bfc; color: #fff; font-size: 1.5rem;">
+            <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        {% endif %}
       </div>
     </div>
     <div class="row mt-2">

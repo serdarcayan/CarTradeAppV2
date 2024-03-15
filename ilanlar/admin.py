@@ -14,7 +14,6 @@ class AdminMarkalar(admin.ModelAdmin):
 
 admin.site.register(Brands, AdminMarkalar)
 
-
 class Adminilanlar(admin.ModelAdmin):
     list_display = ('ResimGoster','title','brand','price','slug','create_time','goruntulenme_sayisi')
     prepopulated_fields = {'slug': ('title',)}
